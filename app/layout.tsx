@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import '@radix-ui/themes/styles.css';
 import './globals.css';
 import { Theme } from '@radix-ui/themes';
+import { Toaster } from 'react-hot-toast';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,7 +20,10 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				<Theme>{children}</Theme>
+				<Theme>
+					{children}
+					<Toaster position='bottom-right' />
+				</Theme>
 			</body>
 		</html>
 	);
